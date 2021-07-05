@@ -1,0 +1,1 @@
+emailText=There we are put text of our email.
