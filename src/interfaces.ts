@@ -1,5 +1,5 @@
-import { Request } from "express";
-import * as axios from "axios";
+import { Request } from 'express';
+import * as axios from 'axios';
 
 export interface WorkWithList {
   (req: Request): Promise<axios.AxiosResponse<string>>;

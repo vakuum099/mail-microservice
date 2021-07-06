@@ -1,8 +1,8 @@
-import { ResultOfGetList } from "../interfaces";
-import { GetRecipientsList } from "./mail.interfaces";
-import { getList } from "./mail.services";
+import { ResultOfGetList } from '../interfaces';
+import { GetRecipientsList } from './mail.interfaces';
+import { getEmailRecipients } from './mail.services';
 
-export const getRecipientsList: GetRecipientsList = async (req, res) => {
-  const resultOfGetList: ResultOfGetList = await getList(req);
+export const prepareForSendingEmail: GetRecipientsList = async (req, res) => {
+  const resultOfGetList: ResultOfGetList = await getEmailRecipients(req);
   res.status(resultOfGetList.code).send(resultOfGetList.content);
 };
