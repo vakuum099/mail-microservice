@@ -5,12 +5,18 @@ export interface WorkWithList {
   (req: Request): Promise<axios.AxiosResponse<string>>;
 }
 
-export interface ResultOfGetList {
+// export interface DBOperationResult {
+//   code: number;
+//   content: string | ListItem[];
+// }
+
+export interface DBOperationResult {
   code: number;
-  content: string | ListItem[];
+  content: string;
 }
 
 export interface ListItem {
   name: string;
   email: string;
+  uuid: string;
 }

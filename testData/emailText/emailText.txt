@@ -1,1 +1,1 @@
-emailText=There we are put text of our email.
+emailText=Hello, <PERSON>!How do you do today?

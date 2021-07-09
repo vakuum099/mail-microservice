@@ -1,6 +1,11 @@
 import express from 'express';
 import { port } from './constants';
+import { SendedEmail } from './mail/mail.model';
 import { router as mail } from './mail/mail.routes';
+import { sequelize } from './sequelize';
+
+sequelize.addModels([SendedEmail]);
+sequelize.sync().then(() => console.log('DataBase sycronized'));
 
 export const app = express();
 app.use(express.urlencoded({ extended: true }));

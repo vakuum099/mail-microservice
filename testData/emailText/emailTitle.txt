@@ -1,1 +1,1 @@
-title=Here we can put some fancy title
+emailTitle=Hello
