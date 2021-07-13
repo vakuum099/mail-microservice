@@ -1,1 +1,1 @@
-emailText=Hello, <PERSON>!How do you do today?
+emailText=Hi there, <PERSON>!How do you do today?

@@ -1,8 +1,13 @@
-import { DBOperationResult } from '../interfaces';
 import { GetRecipientsList } from './mail.interfaces';
-import { getEmailRecipients } from './mail.services';
+import { addEmailToDB, getEmailRecipients, sendEmails } from './mail.services';
 
-export const prepareForSendingEmail: GetRecipientsList = async (req, res) => {
-  const resultOfGetList: DBOperationResult = await getEmailRecipients(req);
-  res.status(resultOfGetList.code).send(resultOfGetList.content);
+export const sendEmailsByList: GetRecipientsList = async (req, res) => {
+  try {
+    const listOfContacts = await getEmailRecipients(req);
+    const sendedEmails = await sendEmails(listOfContacts, req);
+    await addEmailToDB(sendedEmails);
+    res.status(200).send('Successfully sended emails by a List.');
+  } catch {
+    res.status(500).send('Inernal server Error');
+  }
 };

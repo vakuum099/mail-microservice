@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { prepareForSendingEmail } from './mail.controllers';
+import { sendEmailsByList } from './mail.controllers';
 
 export const router = Router();
 
-router.post('/:listId', prepareForSendingEmail);
+router.post('/:listId', sendEmailsByList);
