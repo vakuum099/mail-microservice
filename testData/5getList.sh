@@ -1,0 +1,1 @@
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d @./emailText/emailText.txt -d @./emailText/emailTitle.txt http://localhost:3001/6d050203-b6d6-4e9d-84b5-aa28cbd788a5
